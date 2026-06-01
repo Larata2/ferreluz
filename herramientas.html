@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Herramientas</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center; margin-top:30px;">
+Herramientas
+</h1>
+
+<div class="productos">
+
+<!-- PRODUCTO 1 -->
+<div class="card">
+<img src="imagenes/Taladro.jpg">
+<h3>Taladro Eléctrico</h3>
+<p>RD$3,500</p>
+
+<button onclick="abrirCompra('Taladro Electrico')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 2 -->
+<div class="card">
+<img src="imagenes/Martillo.jpg">
+<h3>Martillo Profesional</h3>
+<p>RD$800</p>
+
+<button onclick="abrirCompra('Martillo Profesional')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 3 -->
+<div class="card">
+<img src="imagenes/Sierra.jpg">
+<h3>Sierra Circular</h3>
+<p>RD$4,200</p>
+
+<button onclick="abrirCompra('Sierra Circular')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 4 -->
+<div class="card">
+<img src="imagenes/Destornillador.jpg">
+<h3>Destornillador</h3>
+<p>RD$350</p>
+
+<button onclick="abrirCompra('Destornillador')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 5 -->
+<div class="card">
+<img src="imagenes/Alicate.jpg">
+<h3>Alicate Industrial</h3>
+<p>RD$600</p>
+
+<button onclick="abrirCompra('Alicate Industrial')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 6 -->
+<div class="card">
+<img src="imagenes/Llave.jpg">
+<h3>Llave Ajustable</h3>
+<p>RD$950</p>
+
+<button onclick="abrirCompra('Llave Ajustable')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 7 -->
+<div class="card">
+<img src="imagenes/Cinta.jpg">
+<h3>Cinta Métrica</h3>
+<p>RD$300</p>
+
+<button onclick="abrirCompra('Cinta Métrica')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 8 -->
+<div class="card">
+<img src="imagenes/Pulidora.jpg">
+<h3>Pulidora Eléctrica</h3>
+<p>RD$5,000</p>
+
+<button onclick="abrirCompra('Pulidora Eléctrica')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 9 -->
+<div class="card">
+<img src="imagenes/Portwest.jpg">
+<h3>Casco de Seguridad</h3>
+<p>RD$700</p>
+
+<button onclick="abrirCompra('Casco de Seguridad')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 10 -->
+<div class="card">
+<img src="imagenes/Pala.jpg">
+<h3>Pala Metálica</h3>
+<p>RD$850</p>
+
+<button onclick="abrirCompra('Pala Metálica')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 11 -->
+<div class="card">
+<img src="imagenes/Escalera.jpg">
+<h3>Escalera de Aluminio</h3>
+<p>RD$6,500</p>
+
+<button onclick="abrirCompra('Escalera de Aluminio')">
+Comprar
+</button>
+
+</div>
+
+<!-- PRODUCTO 12 -->
+<div class="card">
+<img src="imagenes/Caja.jpg">
+<h3>Caja de Herramientas</h3>
+<p>RD$2,000</p>
+
+<button onclick="abrirCompra('Caja de Herramientas')">
+Comprar
+</button>
+
+</div>
+
+</div>
+
+<!-- VOLVER -->
+<div class="volver">
+
+<a href="index.html">
+<button
+style="
+width:100%;
+padding:15px;
+background:#f97316;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+">
+Volver al Inicio
+</button>
+</a>
+
+</div>
+
+<!-- MODAL COMPRA -->
+<div id="modalCompra" class="modal">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarCompra()">
+&times;
+</span>
+
+<h2>Formulario de Compra</h2>
+
+<p id="productoSeleccionado"></p>
+
+<input type="text" placeholder="Nombre completo" required>
+
+<br><br>
+
+<input type="email" placeholder="Correo electrónico" required>
+
+<br><br>
+
+<input type="text" placeholder="Número de tarjeta" required>
+
+<br><br>
+
+<input type="text" placeholder="Fecha de vencimiento" required>
+
+<br><br>
+
+<input type="text" placeholder="CVV" required>
+
+<br><br>
+
+<button
+onclick="finalizarCompra()"
+style="
+width:100%;
+padding:15px;
+background:#f97316;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+">
+PAGAR
+</button>
+
+</div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+/* ABRIR MODAL */
+
+function abrirCompra(producto){
+
+document.getElementById("modalCompra").style.display = "flex";
+
+document.getElementById("productoSeleccionado").innerHTML =
+"Producto seleccionado: " + producto;
+
+}
+
+/* CERRAR MODAL */
+
+function cerrarCompra(){
+
+document.getElementById("modalCompra").style.display = "none";
+
+}
+
+/* FINALIZAR COMPRA */
+
+function finalizarCompra(){
+
+alert("✅ Compra realizada correctamente");
+
+document.getElementById("modalCompra").style.display = "none";
+
+}
+
+let productoActual = "";
+
+function abrirCompra(producto){
+
+productoActual = producto;
+
+document.getElementById("modalCompra").style.display="flex";
+
+document.getElementById("productoSeleccionado").innerHTML =
+"Producto seleccionado: " + producto;
+
+}
+
+function cerrarCompra(){
+
+document.getElementById("modalCompra").style.display="none";
+
+}
+
+function finalizarCompra(){
+
+let carrito =
+JSON.parse(localStorage.getItem("carrito")) || [];
+
+carrito.push(productoActual);
+
+localStorage.setItem(
+"carrito",
+JSON.stringify(carrito)
+);
+
+alert("Compra realizada correctamente");
+
+cerrarCompra();
+
+}
+
+</script>
+
+</body>
+</html>

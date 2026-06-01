@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pinturas</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Pinturas</h1>
+
+<div class="productos">
+
+<div class="card">
+<img src="imagenes/rojo.jpg">
+<h3>Pintura Roja</h3>
+<p>RD$65</p>
+<button onclick="abrirCompra('Pintura Roja')">Comprar</button>
+</div>
+
+<div class="card">
+<img src="imagenes/verde.jpg">
+<h3>Pintura Verde</h3>
+<p>RD$65</p>
+<button onclick="abrirCompra('Pintura Verde')">Comprar</button>
+</div>
+
+<div class="card">
+<img src="imagenes/morado.jpg">
+<h3>Pintura Morado</h3>
+<p>RD$65</p>
+<button onclick="abrirCompra('Pintura Morado')">Comprar</button>
+</div>
+
+<div class="card">
+<img src="imagenes/amarillo.jpg">
+<h3>Pintura Amarilla</h3>
+<p>RD$65</p>
+<button onclick="abrirCompra('Pintura Amarilla')">Comprar</button>
+</div>
+
+<div class="card">
+<img src="imagenes/naranja.jpg">
+<h3>Pintura Naranja</h3>
+<p>RD$65</p>
+<button onclick="abrirCompra('Pintura Naranja')">Comprar</button>
+</div>
+
+<div class="card">
+<img src="imagenes/azul.jpg">
+<h3>Pintura Azul</h3>
+<p>RD$65</p>
+<button onclick="abrirCompra('Pintura Azul')">Comprar</button>
+</div>
+
+</div>
+
+<!-- VOLVER -->
+<div class="volver">
+<a href="index.html">
+<button
+style="
+width:100%;
+padding:15px;
+background:#f97316;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+">
+Entrar
+</button></a>
+</div>
+
+<!-- MODAL COMPRA -->
+<div id="modalCompra" class="modal">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarCompra()">&times;</span>
+
+<h2>Formulario de Compra</h2>
+
+<p id="productoSeleccionado"></p>
+
+<input type="text" placeholder="Nombre completo">
+<input type="email" placeholder="Correo electrónico">
+<input type="text" placeholder="Número de tarjeta">
+<input type="text" placeholder="Fecha vencimiento">
+<input type="text" placeholder="CVV">
+
+<br><br>
+
+<button
+onclick="finalizarCompra()"
+style="
+width:100%;
+padding:15px;
+background:#f97316;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+">
+PAGAR
+</button>
+
+</div>
+
+</div>
+
+<!-- JS -->
+<script>
+
+function abrirCompra(producto){
+document.getElementById("modalCompra").style.display = "flex";
+document.getElementById("productoSeleccionado").innerText = "Producto: " + producto;
+}
+
+function cerrarCompra(){
+document.getElementById("modalCompra").style.display = "none";
+}
+
+function finalizarCompra(){
+alert("Compra realizada correctamente");
+cerrarCompra();
+}
+
+let productoActual = "";
+
+function abrirCompra(producto){
+
+productoActual = producto;
+
+document.getElementById("modalCompra").style.display="flex";
+
+document.getElementById("productoSeleccionado").innerHTML =
+"Producto seleccionado: " + producto;
+
+}
+
+function cerrarCompra(){
+
+document.getElementById("modalCompra").style.display="none";
+
+}
+
+function finalizarCompra(){
+
+let carrito =
+JSON.parse(localStorage.getItem("carrito")) || [];
+
+carrito.push(productoActual);
+
+localStorage.setItem(
+"carrito",
+JSON.stringify(carrito)
+);
+
+alert("Compra realizada correctamente");
+
+cerrarCompra();
+
+}
+
+</script>
+
+</body>
+</html>

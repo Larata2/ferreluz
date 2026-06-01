@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FerreLuz | Ferretería y Materiales de Construcción</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<script>
+
+const fondos = [
+"imagenes/nose.jpg",
+"imagenes/carrusel1.jpeg",
+"imagenes/carrusel2.jpeg",
+];
+
+let fondoActual = 0;
+
+function cambiarFondo(){
+
+fondoActual++;
+
+if(fondoActual >= fondos.length){
+fondoActual = 0;
+}
+
+document.getElementById("inicio").style.backgroundImage =
+`url('${fondos[fondoActual]}')`;
+
+}
+
+setInterval(cambiarFondo, 4000);
+
+</script>
+
+<script>
+
+function moverProductos(direccion){
+
+const slider =
+document.getElementById("sliderProductos");
+
+slider.scrollLeft += direccion * 320;
+
+}
+
+</script>
+
+
+
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div> 829-383-4777</div>
+
+<div> Santiago, República Dominicana</div>
+
+<div> contacto@ferreluz.com</div>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo-container">
+
+<img src="imagenes/logo.png" alt="FerreLuz" class="logo">
+
+</div>
+
+<div class="buscador">
+
+<input type="text" placeholder="Buscar productos...">
+
+<button>🔍</button>
+
+</div>
+
+<div class="acciones">
+
+<span onclick="abrirCuenta()">👤</span>
+<span onclick="abrirCarrito()">🛒</span>
+
+</div>
+
+</header>
+
+<!-- MENU -->
+
+<nav class="menu-principal">
+
+<a href="#inicio">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#servicios">Servicios</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="inicio">
+
+<div class="overlay"></div>
+
+<div class="contenido-hero">
+
+<span class="etiqueta">
+FERRELUZ FERRETERÍA 
+</span>
+
+<h1>
+Todo en Herramientas y Materiales de Construcción
+</h1>
+
+<p>
+Productos de calidad para hogares, negocios y proyectos de construcción.
+</p>
+
+<div class="hero-botones">
+
+<a href="productos.html">
+
+<button class="btn-principal">
+Ver Productos
+</button>
+
+</a>
+
+<a href="#contacto">
+
+<button class="btn-secundario">
+Solicitar Cotización
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ESTADISTICAS -->
+
+<section class="estadisticas">
+
+<div class="dato">
+
+<h3>30+</h3>
+
+<p>Productos</p>
+
+</div>
+
+<div class="dato">
+
+<h3>2000+</h3>
+
+<p>Clientes</p>
+
+</div>
+
+<div class="dato">
+
+<h3>10+</h3>
+
+<p>Años de experiencia</p>
+
+</div>
+
+<div class="dato">
+
+<h3>24/7</h3>
+
+<p>Atención</p>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS DESTACADOS -->
+
+<section id="productos">
+
+<div class="contenedor-slider-productos">
+
+<button class="flecha-producto izquierda"
+onclick="moverProductos(-1)">
+❮
+</button>
+
+<div class="productos-grid" id="sliderProductos">
+
+<div class="card-producto">
+
+<img src="imagenes/Taladro.jpg">
+
+<h3>Taladro Eléctrico</h3>
+
+<p>RD$3,500</p>
+
+<button onclick="abrirCompra('Taladro Eléctrico')">
+Comprar
+</button>
+
+</div>
+
+<div class="card-producto">
+
+<img src="imagenes/Martillo.jpg">
+
+<h3>Martillo Profesional</h3>
+
+<p>RD$800</p>
+
+<button onclick="abrirCompra('Martillo Profesional')">
+Comprar
+</button>
+
+</div>
+
+<div class="card-producto">
+
+<img src="imagenes/Pintura Vinil.jpg">
+
+<h3>Pintura Acrílica</h3>
+
+<p>RD$1,200</p>
+
+<button onclick="abrirCompra('Pintura Acrílica')">
+Comprar
+</button>
+
+</div>
+
+<div class="card-producto">
+
+<img src="imagenes/cemento.jpg">
+
+<h3>Saco de Cemento</h3>
+
+<p>RD$650</p>
+
+<button onclick="abrirCompra('Saco de Cemento')">
+Comprar
+</button>
+
+</div>
+
+<div class="card-producto">
+
+<img src="imagenes/Caja.jpg">
+
+<h3>Caja de Herramientas</h3>
+
+<p>RD$2,000</p>
+
+<button onclick="abrirCompra('Caja de Herramientas')">
+Comprar
+</button>
+
+</div>
+
+<div class="card-producto">
+
+<img src="imagenes/block.jpg">
+
+<h3>Bloques</h3>
+
+<p>RD$75</p>
+
+<button onclick="abrirCompra('Bloques')">
+Comprar
+</button>
+
+</div>
+
+</div>
+
+<button class="flecha-producto derecha"
+onclick="moverProductos(1)">
+❯
+</button>
+
+</div>
+
+</section>
+
+<!-- SERVICIOS -->
+
+<section id="servicios">
+
+<div class="titulo-seccion">
+
+<span>SOLUCIONES</span>
+
+<h2>Nuestros Servicios</h2>
+
+</div>
+
+<div class="servicios-grid">
+
+<a href="herramientas.html" class="servicio-card">
+
+<img src="imagenes/herramientas.jpg">
+
+<div class="servicio-info">
+
+<h3>Herramientas</h3>
+
+<p>
+Herramientas eléctricas y manuales para cualquier proyecto.
+</p>
+
+</div>
+
+</a>
+
+<a href="construccion.html" class="servicio-card">
+
+<img src="imagenes/construccion.jpg">
+
+<div class="servicio-info">
+
+<h3>Construcción</h3>
+
+<p>
+Materiales resistentes para obras y remodelaciones.
+</p>
+
+</div>
+
+</a>
+
+<a href="pinturas.html" class="servicio-card">
+
+<img src="imagenes/pintura.jpg">
+
+<div class="servicio-info">
+
+<h3>Pinturas</h3>
+
+<p>
+Acabados modernos y pinturas de alta calidad.
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- NOSOTROS -->
+
+<section id="nosotros">
+
+<div class="contenedor-nosotros">
+
+<div class="texto-nosotros">
+
+<span>QUIÉNES SOMOS</span>
+
+<h2>
+Más de 10 años brindando calidad y confianza
+</h2>
+
+<p>
+
+Somos una empresa especializada en herramientas, materiales de construcción y soluciones para proyectos residenciales y comerciales.
+
+Nuestro objetivo es ofrecer productos confiables, excelente servicio y precios competitivos para satisfacer las necesidades de nuestros clientes.
+
+</p>
+
+</div>
+
+<div class="imagen-nosotros">
+
+<img src="imagenes/construccion.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+<div class="titulo-seccion">
+
+<span>CONTACTO</span>
+
+<h2>Solicita Información</h2>
+
+</div>
+
+<form onsubmit="enviarFormulario(event)">
+
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+
+<input type="email" id="correo" placeholder="Correo electrónico" required>
+
+<textarea id="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+
+<button type="submit">
+Enviar Mensaje
+</button>
+
+</form>
+
+<p id="respuesta"></p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-contenido">
+
+<div>
+
+<h3>FerreLuz</h3>
+
+<p>
+Tu aliado en herramientas y materiales de construcción.
+</p>
+
+</div>
+
+<div>
+
+<h4>Contacto</h4>
+
+<p> 829-383-4777</p>
+
+<p> Santiago, República Dominicana</p>
+
+<p> contacto@ferreluz.com</p>
+
+</div>
+
+</div>
+
+<div class="footer-copy">
+
+© 2026 FerreLuz. Todos los derechos reservados.
+
+</div>
+
+</footer>
+
+<div id="modalCuenta" class="modal">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarCuenta()">&times;</span>
+
+<div id="crearCuenta">
+
+<h2>Crear Cuenta</h2>
+
+<input type="text" placeholder="Nombre">
+
+<input type="email" placeholder="Correo">
+
+<input type="password" placeholder="Contraseña">
+
+<button
+onclick="registrarCuenta()"
+style="
+width:100%;
+padding:12px;
+background:#f97316;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+">
+Crear Cuenta
+</button>
+
+<p>
+¿Ya tienes cuenta?
+<a href="#" onclick="mostrarLogin()">
+Iniciar sesión
+</a>
+</p>
+
+</div>
+
+<div id="iniciarSesion" style="display:none;">
+
+<h2>Iniciar Sesión</h2>
+
+<input type="email" placeholder="Correo">
+
+<input type="password" placeholder="Contraseña">
+
+<button
+style="
+width:100%;
+padding:15px;
+background:#f97316;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+">
+Entrar
+</button>
+
+<p>
+¿No tienes cuenta?
+<a href="#" onclick="mostrarRegistro()">
+Crear Cuenta
+</a>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="modalCarrito" class="modal">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarCarrito()">
+&times;
+</span>
+
+<h2>Carrito</h2>
+
+<ul id="listaCarrito"></ul>
+
+</div>
+
+</div>
+
+<!-- MODAL COMPRA -->
+
+<div id="modalCompra" class="modal">
+
+<div class="modal-contenido">
+
+<span class="cerrar" onclick="cerrarCompra()">
+&times;
+</span>
+
+<h2>Formulario de Compra</h2>
+
+<p id="productoSeleccionado"></p>
+
+<input type="text" placeholder="Nombre completo">
+
+<input type="email" placeholder="Correo electrónico">
+
+<input type="text" placeholder="Número de tarjeta">
+
+<input type="text" placeholder="Fecha de vencimiento">
+
+<input type="text" placeholder="CVV">
+
+<button
+onclick="finalizarCompra()"
+style="
+width:100%;
+padding:15px;
+background:#f97316;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+">
+PAGAR
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirCompra(producto){
+
+document.getElementById("modalCompra").style.display="flex";
+
+document.getElementById("productoSeleccionado").innerHTML=
+"Producto seleccionado: " + producto;
+
+}
+
+function cerrarCompra(){
+
+document.getElementById("modalCompra").style.display="none";
+
+}
+
+let productoActual = "";
+
+function abrirCompra(producto){
+
+productoActual = producto;
+
+document.getElementById("modalCompra").style.display="flex";
+
+document.getElementById("productoSeleccionado").innerHTML =
+"Producto seleccionado: " + producto;
+
+}
+
+function finalizarCompra(){
+
+let carrito =
+JSON.parse(localStorage.getItem("carrito")) || [];
+
+carrito.push(productoActual);
+
+localStorage.setItem(
+"carrito",
+JSON.stringify(carrito)
+);
+
+alert("Compra realizada correctamente");
+
+cerrarCompra();
+
+}
+
+async function enviarFormulario(event){
+
+event.preventDefault();
+
+let nombre =
+document.getElementById("nombre").value;
+
+document.getElementById("respuesta").innerHTML =
+"✅ Gracias por contactarnos, " + nombre;
+
+}
+
+function abrirCuenta(){
+document.getElementById("modalCuenta").style.display="flex";
+}
+
+function cerrarCuenta(){
+document.getElementById("modalCuenta").style.display="none";
+}
+
+function mostrarLogin(){
+
+document.getElementById("crearCuenta").style.display="none";
+
+document.getElementById("iniciarSesion").style.display="block";
+
+}
+
+function mostrarRegistro(){
+
+document.getElementById("crearCuenta").style.display="block";
+
+document.getElementById("iniciarSesion").style.display="none";
+
+}
+
+function registrarCuenta(){
+
+alert("Cuenta creada correctamente");
+
+cerrarCuenta();
+
+}
+
+function abrirCarrito(){
+
+let carrito =
+JSON.parse(localStorage.getItem("carrito")) || [];
+
+let lista =
+document.getElementById("listaCarrito");
+
+lista.innerHTML = "";
+
+carrito.forEach(function(producto){
+
+lista.innerHTML += "<li>" + producto + "</li>";
+
+});
+
+document.getElementById("modalCarrito").style.display="flex";
+
+}
+
+function cerrarCarrito(){
+
+document.getElementById("modalCarrito").style.display="none";
+
+}
+
+</script>
+
+</body>
+
+</html>
